@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply font-sans antialiased;
+  }
+  * {
+    @apply box-border;
+  }
+}
+
+@layer components {
+  .brand-gradient {
+    background: linear-gradient(135deg, #E53935 0%, #FB8C00 33%, #7CB342 66%, #039BE5 100%);
+  }
+  .brand-gradient-text {
+    background: linear-gradient(135deg, #E53935, #FB8C00, #7CB342, #039BE5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .card-hover {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-xl;
+  }
+  .btn-primary {
+    @apply bg-brand-red text-white px-5 py-2.5 rounded-lg font-semibold text-sm hover:bg-red-700 transition-colors duration-200;
+  }
+  .btn-outline {
+    @apply border border-brand-blue text-brand-blue px-5 py-2.5 rounded-lg font-semibold text-sm hover:bg-brand-blue hover:text-white transition-colors duration-200;
+  }
+  .tag-pill {
+    @apply text-xs font-semibold px-2.5 py-1 rounded-full uppercase tracking-wide;
+  }
+  .section-heading {
+    @apply text-2xl font-bold tracking-tight;
+  }
+  .ad-banner {
+    @apply border-2 border-dashed border-gray-300 dark:border-gray-700 rounded-xl flex items-center justify-center text-gray-400 dark:text-gray-600 text-sm font-medium;
+  }
+  /* News ticker */
+  .ticker-wrap {
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .ticker-content {
+    display: inline-block;
+    animation: ticker 40s linear infinite;
+  }
+  .ticker-content:hover {
+    animation-play-state: paused;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
